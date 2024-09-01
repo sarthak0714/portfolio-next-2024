@@ -3,9 +3,8 @@ import { Inter } from "next/font/google";
 import localfont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
 const vsrosd = localfont({
-  src: [{ path: "../public/VCR_OSD_MONO_1.001.ttf" }],
+  src: [{ path: "../public/ModernDOS9x16.ttf" }],
   variable: "--font-vsrosd",
 });
 
