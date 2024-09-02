@@ -62,27 +62,27 @@ export const data = {
       descriptionS:
         "A SaaS platform enabling scalable and accessible certificate generation and verification services.",
       descriptionL:
-        "CERTISURE is a SaaS platform that enables scalable and accessible certificate generation and verification services for a diverse client base. It provides a streamlined system that allows users to create various types of certificates efficiently while offering accessible verification services to ensure authenticity and reliability.",
+        "CERTISURE is a SaaS platform that enables scalable and accessible certificate generation and verification services for a diverse client base. It provides a streamlined system that allows users to create various types of certificates efficiently while offering accessible verification services to ensure authenticity and reliability. Currently being used by 2 college committees and TSEC IT Dept. ",
 
-      technologies: ["React", "Tailwind CSS", "Flask", "Vercel"],
+      technologies: `["React", "Tailwind", "Flask"]`,
       link: "https://certisure.vercel.app/",
     },
     {
-      title: "Tic-Tac-Toe (Game Server)",
+      title: "TTT (Game Server)",
       descriptionS:
         "Developed a server using Go and the actor model for encapsulation, scalability, and real-time updates via WebSockets.",
       descriptionL:
         "Developed a web-based Tic-Tac-Toe game server in Go using the actor model for better encapsulation and scalability, with channel communication between actors. Implemented real-time game updates via WebSockets for seamless state synchronization across clients. Designed game logic for game creation, move validation, and status updates, with a clear structure for actors, messages, handlers, and logic.",
-      technologies: ["Go", "WebSockets"],
+      technologies: `["Go", "WebSockets", HTMX]`,
       link: "https://github.com/sarthak0714/ttt",
     },
     {
       title: "Tollywood",
-      description:
-        "A Go-based implementation of the actor model for building distributed systems with message-passing communication via gRPC.",
+      descriptionS:
+        "A Go-based implementation of the actor model for building distributed systems with communication via gRPC.",
       descriptionL:
-        "A Go-based implementation of the actor model, providing a straightforward framework for building scalable and distributed systems. Implemented lightweight, concurrent actors with message-passing based communication, supporting remote actor management and communication via gRPC. Designed a scalable architecture suitable for distributed systems and ensured easy integration with existing Go applications.",
-      technologies: ["Go", "gRPC"],
+        "A Go-based implementation of the actor model, providing a straightforward framework for building scalable and distributed systems. Implemented lightweight, concurrent actors with message-passing based communication, supporting remote actor management and communication via gRPC. It is a straightforward framework for building scalable and distributed systems using the actor pattern.",
+      technologies: `["Go", "gRPC"]`,
       link: "https://github.com/sarthak0714/tollywood",
     },
   ],

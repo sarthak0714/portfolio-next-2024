@@ -1,3 +1,5 @@
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 import { data } from "./data";
 import Link from "next/link";
 import {
@@ -5,16 +7,43 @@ import {
   AiFillGithub,
   AiFillLinkedin,
   AiFillTwitterSquare,
-  AiOutlineDownload,
   AiOutlineEye,
 } from "react-icons/ai";
-import { FaFileDownload } from "react-icons/fa";
+import { VscLinkExternal } from "react-icons/vsc";
+
+import { useRouter } from "next/navigation";
+import { SiHtmx, SiSocketdotio, SiFlask } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { FaFileDownload, FaReact } from "react-icons/fa";
+import { FaGolang } from "react-icons/fa6";
+import Scroller from "./Scroller";
 
 export default function Home() {
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const [hydrated, setHydrated] = React.useState(false);
+  const router = useRouter();
+  useEffect(() => {
+    setHydrated(true);
+
+    timerRef.current = setInterval(() => {
+      setTime(new Date().toLocaleTimeString());
+    }, 1000);
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, []);
+  if (!hydrated) {
+    return null;
+  }
+
   return (
     <main className="border-2 border-white m-2">
-      <div className="grid grid-rows-2 md:grid-cols-3 md:grid-rows-1">
-        <div className="border-b-2 border-white h-14 grid grid-cols-12 gap-0 md:col-span-2">
+      <div className="grid grid-rows-2 md:grid-cols-6 md:grid-rows-1">
+        <div className="border-b-2 border-white h-14 grid grid-cols-12 gap-0 md:col-span-5">
           <div className=" border-r-2 border-white h-full col-span-2 md:col-span-1 flex justify-center items-center">
             <p className="text-white text-center text-lg md:text-3xl">0714</p>
           </div>
@@ -22,17 +51,29 @@ export default function Home() {
             <p className="text-white text-xl md:text-3xl">Sarthak Tanpure.</p>
           </div>
         </div>
-        <div className="h-10 border-b-2 border-white grid grid-cols-3 md:h-14">
+        <div className="h-10 border-b-2  border-white grid md:grid-cols-1 grid-cols-3 md:h-14">
           {/* <div className="border-r-2 border-white"></div> */}
-          <div className="border-r-2 md:border-l-2 border-white">
-            <p className="text-white">Exp.</p>
+          <div className="hidden md:flex md:justify-center items-center border-r-2 md:border-l-2 border-white">
+            <p className="text-white text-2xl text-center ">{time}</p>
           </div>
-          <div className="border-r-2 border-white">
-            <p className="text-white">Wins.</p>
-          </div>
-          <div className="">
-            <p className="text-white">Projects</p>
-          </div>
+          <Link
+            href="#expr"
+            className="flex md:hidden border-r-2 md:border-l-2 border-white items-center justify-center"
+          >
+            <p className="text-white text-sm">&gt; Experience</p>
+          </Link>
+          <Link
+            href="#ach"
+            className="flex md:hidden border-r-2 border-white items-center justify-center"
+          >
+            <p className="text-white text-sm">&gt; Achievement</p>
+          </Link>
+          <Link
+            href="#proj"
+            className="flex md:hidden items-center justify-center"
+          >
+            <p className="text-white text-sm">&gt; Projects</p>
+          </Link>
         </div>
       </div>
       <div className="border-b-2 border-white grid grid-rows-2 h-96 md:grid-cols-2 md:grid-rows-1 md:h-56 ">
@@ -43,6 +84,7 @@ export default function Home() {
         <div className=" grid grid-cols-2  md:border-white">
           <div className="border-r-2 border-white h-full relative">
             <iframe
+              title="map"
               src="https://my.atlist.com/map/8a8c7146-1bab-4dc7-ad01-391a4574fcd1/?share=true"
               allow="geolocation 'self' https://my.atlist.com"
               width="100%"
@@ -51,8 +93,8 @@ export default function Home() {
             ></iframe>
           </div>
           <div className="grid grid-rows-3">
-            <div className="border-b-2 border-white">
-              <p className="text-white">Rolling tech stack</p>
+            <div className="border-b-2 border-white  flex justify-center items-center">
+              <Scroller />
             </div>
             <div className="border-b-2  border-white flex justify-evenly items-center">
               <Link href={data.socialLinks.email}>
@@ -87,6 +129,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-1 md:gap-4">
               <p className="text-white  text-md md:text-2xl flex">Resume</p>
               <iframe
+                title="side arrow"
                 width={30}
                 height={30}
                 className="rotate-[270deg]"
@@ -95,14 +138,14 @@ export default function Home() {
               <Link href={data.resumeLink} className="text-sm md:text-base">
                 <FaFileDownload
                   color="white"
-                  size={30}
+                  size={35}
                   className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
               <Link href={data.resumeLink}>
                 <AiOutlineEye
                   color="white"
-                  size={40}
+                  size={35}
                   className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
@@ -112,15 +155,23 @@ export default function Home() {
       </div>
       <div className="border-b-2 border-white h-6 diagonal-stripes "></div>
       <div className="grid grid-rows-2 border-b-2 border-white  md:grid-rows-1 md:grid-cols-2">
-        <div className="border-b-2 border-white md:border-b-0 md:border-r-2 flex p-4 flex-col gap-6">
-          <p className="text-xl ">Looking for Work ...</p>
+        <div
+          id="expr"
+          className="border-b-2 border-white md:border-b-0 md:border-r-2 flex flex-col gap-3"
+        >
+          <p className="text-xl border-white border-b-2  py-1 px-2">
+            Work Experince
+          </p>
+          <p className="text-2xl px-4 py-1">- Open to Work -</p>
 
           {data.workExp.map((item, idx) => {
             return (
               <div
-                className="flex justify-between items-center gap-4"
+                className="flex justify-between items-center px-2 py-1 gap-2 md:gap-4 md:px-2"
                 key={idx}
               >
+                <span className="md:ml-1 pr-[1px] md:pr-2">&gt; </span>
+
                 <div className=" text-2xl line-through decoration-1 w-full ">
                   {item.title}
                 </div>
@@ -140,7 +191,7 @@ export default function Home() {
             );
           })}
         </div>
-        <div className="flex flex-col gap-2 ">
+        <div className="flex flex-col gap-2 " id="ach">
           <p className="text-xl border-white border-b-2  py-1 px-2">
             Achievements
           </p>
@@ -151,14 +202,14 @@ export default function Home() {
                 key={idx}
               >
                 <div className="flex flex-wrap text-left items-center  w-[160px] md:w-full">
+                  <span className="pr-2">&gt; </span>
                   {item.title}
-                  <span className="md:block hidden text-sm ml-2">
+                  <span className="md:block hidden text-sm ml-2 italic">
                     {item.institution}
                   </span>
                 </div>
                 <div>
                   <div className=" text-right md:min-w-52">{item.rank}</div>
-                  {/* <div className="text-right">{item.date}</div> */}
                 </div>
               </div>
             );
@@ -166,23 +217,106 @@ export default function Home() {
         </div>
       </div>
       <div className="border-b-2 border-white h-6 diagonal-stripes"></div>
-      <div className="border-b-2 border-white h-[42rem] md:h-56 grid grid-rows-3 md:grid-rows-1 md:grid-cols-3">
-        <div className="border-b-2 border-white h-56 md:border-b-0 md:border-r-2">
-          <p className="text-white">proj</p>
+      <div className="border-b-2 border-white  grid grid-rows-3   md:grid-rows-1 md:grid-cols-3">
+        <div className="border-b-2 border-white  md:border-b-0 md:border-r-2">
+          <div className="flex flex-col gap-2 px-2 pb-1" id="proj">
+            <div className="text-xl md:text-2xl flex mt-2 justify-between items-center">
+              &gt; {data.Projects[0].title}
+              <span className="text-xs md:text-sm italic flex gap-2">
+                <FaReact
+                  color="white"
+                  size={30}
+                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                />
+                <RiTailwindCssFill
+                  color="white"
+                  size={30}
+                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                />
+                <SiFlask
+                  color="white"
+                  size={27}
+                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100 mr-1"
+                />
+              </span>
+            </div>
+            <div className="hidden p-2 text-sm md:block text-justify">
+              {data.Projects[0].descriptionL}
+            </div>
+            <div className="block px-1  text-sm md:hidden text-justify">
+              {data.Projects[0].descriptionS}
+            </div>
+          </div>
         </div>
-        <div className="border-b-2 border-white h-56 md:border-b-0 md:border-r-2">
-          <p className="text-white">proj</p>
+        <div className="border-b-2 border-white  md:border-b-0  md:border-r-2">
+          <div className="flex flex-col gap-2 px-2 pb-1">
+            <div className="text-xl md:text-2xl flex mt-2 justify-between items-center">
+              &gt; {data.Projects[1].title}
+              <span className="text-xs md:text-sm italic flex gap-2">
+                <FaGolang
+                  color="white"
+                  size={30}
+                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                />
+                <SiHtmx
+                  color="white"
+                  size={30}
+                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                />
+                <SiSocketdotio
+                  color="white"
+                  size={30}
+                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                />
+              </span>
+            </div>
+            <div className="hidden p-2 text-sm md:block text-justify">
+              {data.Projects[1].descriptionL}
+            </div>
+            <div className="block px-1  text-sm md:hidden text-justify">
+              {data.Projects[1].descriptionS}
+            </div>
+          </div>
         </div>
-        <div className="h-56">
-          <p className="text-white">proj</p>
+        <div className="border-b-2 border-white  md:border-b-0 md:border-r-2">
+          <div className="flex flex-col gap-2 px-2 pb-1">
+            <div className="text-xl md:text-2xl flex mt-2 justify-between items-center">
+              &gt; {data.Projects[2].title}
+              <span className="text-xs md:text-sm italic flex gap-2">
+                <FaGolang
+                  color="white"
+                  size={30}
+                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                />
+                <img
+                  width={35}
+                  height={35}
+                  src="https://raw.githubusercontent.com/cncf/artwork/main/projects/grpc/icon/white/grpc-icon-white.svg"
+                  alt=""
+                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                />
+              </span>
+            </div>
+            <div className="hidden p-2 text-sm md:block text-justify">
+              {data.Projects[2].descriptionL}
+            </div>
+            <div className="block px-1  text-sm md:hidden text-justify">
+              {data.Projects[2].descriptionS}
+            </div>
+          </div>
         </div>
       </div>
-      <div className="border-b-2 border-white h-6 grid grid-cols-10 ">
-        <div className="col-span-3 border-r-2 border-white md:col-span-4 diagonal-stripes"></div>
-        <div className="col-span-4 border-r-2 border-white md:col-span-2 ">
-          <p className="text-white">More</p>
-        </div>
-        <div className="col-span-3 md:col-span-4 diagonal-stripes"></div>
+      <div className="border-b-2 border-white h-8 grid grid-cols-10 ">
+        <div className="col-span-3  border-white md:col-span-4 diagonal-stripes"></div>
+        <Link
+          href="https://github.com/sarthak0714?tab=repositories"
+          className="flex justify-center items-center col-span-4   md:col-span-2 hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+        >
+          <div className="mr-2 text-xl">More</div>
+          <VscLinkExternal color="white" size={17} className="" />
+        </Link>
+
+        <div className="col-span-3 border-l-2  border-white md:col-span-4 diagonal-stripes"></div>
       </div>
       <div className="h-8 p-1">
         <p className="text-white text-center">Made with 💗 by Sarthak</p>
