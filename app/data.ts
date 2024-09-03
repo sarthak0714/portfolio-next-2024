@@ -9,7 +9,9 @@ export const data = {
     x: "https://x.com/sarthakt0714",
     email: "mailto:sarthak.t1403@gmail.com",
   },
-  resumeLink: "",
+  resumeLink:
+    "https://github.com/sarthak0714/Resume/blob/main/SarthakResGen.pdf",
+
   workExp: [
     {
       title: "SDE Intern",

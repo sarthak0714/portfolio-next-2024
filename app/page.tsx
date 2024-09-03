@@ -4,14 +4,11 @@ import { data } from "./data";
 import Link from "next/link";
 import {
   AiFillMail,
-  AiFillGithub,
   AiFillLinkedin,
   AiFillTwitterSquare,
   AiOutlineEye,
 } from "react-icons/ai";
 import { VscLinkExternal } from "react-icons/vsc";
-import { TfiArrowTopRight } from "react-icons/tfi";
-import { useRouter } from "next/navigation";
 import { SiHtmx, SiSocketdotio, SiFlask } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaFileDownload, FaGithubSquare, FaReact } from "react-icons/fa";
@@ -23,13 +20,18 @@ export default function Home() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [hydrated, setHydrated] = React.useState(false);
+  const handleDownloadClick = () => {
+    const url = `${data.resumeLink}?raw=true`;
+    const link = document.createElement("a");
+    link.href = url;
+    link.click();
+  };
   useEffect(() => {
     setHydrated(true);
 
     timerRef.current = setInterval(() => {
       setTime(new Date().toLocaleTimeString());
     }, 1000);
-
     return () => {
       if (timerRef.current) {
         clearInterval(timerRef.current);
@@ -157,18 +159,16 @@ export default function Home() {
                 className="rotate-[270deg]"
                 src="https://lottie.host/embed/c74a9e0b-6910-44d6-837e-c4cb74b7ef08/vAeNFy4G2a.json"
               ></iframe>
-              <Link
-                href={data.resumeLink}
+              <div
                 className="text-sm md:text-base"
-                rel="noopener noreferrer"
-                target="_blank"
+                onClick={handleDownloadClick}
               >
                 <FaFileDownload
                   color="white"
                   size={35}
                   className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
-              </Link>
+              </div>
               <Link
                 href={data.resumeLink}
                 rel="noopener noreferrer"
