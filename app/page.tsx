@@ -10,13 +10,14 @@ import {
   AiOutlineEye,
 } from "react-icons/ai";
 import { VscLinkExternal } from "react-icons/vsc";
-
+import { TfiArrowTopRight } from "react-icons/tfi";
 import { useRouter } from "next/navigation";
 import { SiHtmx, SiSocketdotio, SiFlask } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { FaFileDownload, FaReact } from "react-icons/fa";
+import { FaFileDownload, FaGithubSquare, FaReact } from "react-icons/fa";
 import { FaGolang } from "react-icons/fa6";
 import Scroller from "./Scroller";
+import Image from "next/image";
 
 export default function Home() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
@@ -41,7 +42,7 @@ export default function Home() {
   }
 
   return (
-    <main className="border-2 border-white m-2">
+    <main className="border-2 border-white m-2 ">
       <div className="grid grid-rows-2 md:grid-cols-6 md:grid-rows-1">
         <div className="border-b-2 border-white h-14 grid grid-cols-12 gap-0 md:col-span-5">
           <div className=" border-r-2 border-white h-full col-span-2 md:col-span-1 flex justify-center items-center">
@@ -76,7 +77,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="border-b-2 border-white grid grid-rows-2 h-96 md:grid-cols-2 md:grid-rows-1 md:h-56 ">
+      <div className="border-b-2 border-white grid grid-rows-2  md:grid-cols-2 md:grid-rows-1 ">
         <div className="border-b-2 md:border-b-0 border-white md:border-r-2">
           <p className="text-white">{data.about.title}</p>
           <p className="text-white">{data.about.desc}</p>
@@ -105,9 +106,9 @@ export default function Home() {
                 />
               </Link>
               <Link href={data.socialLinks.github}>
-                <AiFillGithub
+                <FaGithubSquare
                   color="white"
-                  size={40}
+                  size={35}
                   className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
@@ -157,7 +158,7 @@ export default function Home() {
       <div className="grid grid-rows-2 border-b-2 border-white  md:grid-rows-1 md:grid-cols-2">
         <div
           id="experience"
-          className="border-b-2 border-white md:border-b-0 md:border-r-2 flex flex-col gap-3"
+          className="border-b-2 cursor-[  url(../public/dpa.png), _auto] border-white md:border-b-0 md:border-r-2 flex flex-col gap-3"
         >
           <p className="text-xl border-white border-b-2  py-1 px-2">
             Work Experince
@@ -172,7 +173,7 @@ export default function Home() {
               >
                 <span className="md:ml-1 pr-[1px] md:pr-2">&gt; </span>
 
-                <div className=" text-2xl cursor-custom hover:cursor-custom strike-text  line-through decoration-1 w-full ">
+                <div className=" text-2xl   strike-text  line-through decoration-1 w-full ">
                   {item.title}
                 </div>
                 <div className="flex flex-col md:w-full">
@@ -220,8 +221,14 @@ export default function Home() {
       <div className="border-b-2 border-white  grid grid-rows-3   md:grid-rows-1 md:grid-cols-3">
         <div className="border-b-2 border-white  md:border-b-0 md:border-r-2">
           <div className="flex flex-col gap-2 px-2 pb-1" id="projects">
-            <div className="text-xl md:text-2xl flex mt-2 justify-between items-center">
-              &gt; {data.Projects[0].title}
+            <Link
+              href={data.Projects[0].link}
+              className="text-xl md:text-3xl flex mt-2 cursor-pointer  justify-between items-center"
+            >
+              <div className="hover:-translate-y-1 transition-transform duration-300 ease-in-out">
+                &gt; {data.Projects[0].title}
+              </div>
+
               <span className="text-xs md:text-sm italic flex gap-2">
                 <FaReact
                   color="white"
@@ -239,7 +246,7 @@ export default function Home() {
                   className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100 mr-1"
                 />
               </span>
-            </div>
+            </Link>
             <div className="hidden p-2 text-sm md:block text-justify">
               {data.Projects[0].descriptionL}
             </div>
@@ -250,8 +257,13 @@ export default function Home() {
         </div>
         <div className="border-b-2 border-white  md:border-b-0  md:border-r-2">
           <div className="flex flex-col gap-2 px-2 pb-1">
-            <div className="text-xl md:text-2xl flex mt-2 justify-between items-center">
-              &gt; {data.Projects[1].title}
+            <Link
+              href={data.Projects[1].link}
+              className="text-xl md:text-3xl flex mt-2 justify-between items-center cursor-pointer"
+            >
+              <div className="hover:-translate-y-1 transition-transform duration-300 ease-in-out">
+                &gt; {data.Projects[1].title}
+              </div>{" "}
               <span className="text-xs md:text-sm italic flex gap-2">
                 <FaGolang
                   color="white"
@@ -269,7 +281,7 @@ export default function Home() {
                   className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </span>
-            </div>
+            </Link>
             <div className="hidden p-2 text-sm md:block text-justify">
               {data.Projects[1].descriptionL}
             </div>
@@ -280,15 +292,20 @@ export default function Home() {
         </div>
         <div className="border-b-2 border-white  md:border-b-0 md:border-r-2">
           <div className="flex flex-col gap-2 px-2 pb-1">
-            <div className="text-xl md:text-2xl flex mt-2 justify-between items-center">
-              &gt; {data.Projects[2].title}
+            <Link
+              href={data.Projects[2].link}
+              className="text-xl md:text-3xl flex mt-2 justify-between items-center cursor-pointer "
+            >
+              <div className="hover:-translate-y-1 transition-transform duration-300 ease-in-out">
+                &gt; {data.Projects[2].title}
+              </div>{" "}
               <span className="text-xs md:text-sm italic flex gap-2">
                 <FaGolang
                   color="white"
                   size={30}
                   className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
-                <img
+                <Image
                   width={35}
                   height={35}
                   src="https://raw.githubusercontent.com/cncf/artwork/main/projects/grpc/icon/white/grpc-icon-white.svg"
@@ -296,7 +313,7 @@ export default function Home() {
                   className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </span>
-            </div>
+            </Link>
             <div className="hidden p-2 text-sm md:block text-justify">
               {data.Projects[2].descriptionL}
             </div>

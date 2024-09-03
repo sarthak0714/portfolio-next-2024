@@ -62,7 +62,7 @@ export const data = {
       descriptionS:
         "A SaaS platform enabling scalable and accessible certificate generation and verification services.",
       descriptionL:
-        "CERTISURE is a SaaS platform that enables scalable and accessible certificate generation and verification services for a diverse client base. It provides a streamlined system that allows users to create various types of certificates efficiently while offering accessible verification services to ensure authenticity and reliability. Currently being used by 2 college committees and TSEC IT Dept. ",
+        "CERTISURE is a SaaS platform that enables scalable and accessible certificate generation and verification services for a diverse client base. It provides a streamlined system that allows users to create various types of certificates efficiently while offering accessible verification services to ensure authenticity and reliability.",
 
       technologies: `["React", "Tailwind", "Flask"]`,
       link: "https://certisure.vercel.app/",
