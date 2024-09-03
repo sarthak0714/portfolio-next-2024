@@ -57,19 +57,19 @@ export default function Home() {
             <p className="text-white text-2xl text-center ">{time}</p>
           </div>
           <Link
-            href="#expr"
+            href="#experience"
             className="flex md:hidden border-r-2 md:border-l-2 border-white items-center justify-center"
           >
             <p className="text-white text-sm">&gt; Experience</p>
           </Link>
           <Link
-            href="#ach"
+            href="#acknowledgement"
             className="flex md:hidden border-r-2 border-white items-center justify-center"
           >
             <p className="text-white text-sm">&gt; Achievement</p>
           </Link>
           <Link
-            href="#proj"
+            href="#projects"
             className="flex md:hidden items-center justify-center"
           >
             <p className="text-white text-sm">&gt; Projects</p>
@@ -101,28 +101,28 @@ export default function Home() {
                 <AiFillMail
                   color="white"
                   size={40}
-                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                  className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
               <Link href={data.socialLinks.github}>
                 <AiFillGithub
                   color="white"
                   size={40}
-                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                  className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
               <Link href={data.socialLinks.linkedin}>
                 <AiFillLinkedin
                   color="white"
                   size={40}
-                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                  className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
               <Link href={data.socialLinks.x}>
                 <AiFillTwitterSquare
                   color="white"
                   size={40}
-                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                  className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
             </div>
@@ -139,14 +139,14 @@ export default function Home() {
                 <FaFileDownload
                   color="white"
                   size={35}
-                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                  className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
               <Link href={data.resumeLink}>
                 <AiOutlineEye
                   color="white"
                   size={35}
-                  className="hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                  className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
             </div>
@@ -156,7 +156,7 @@ export default function Home() {
       <div className="border-b-2 border-white h-6 diagonal-stripes "></div>
       <div className="grid grid-rows-2 border-b-2 border-white  md:grid-rows-1 md:grid-cols-2">
         <div
-          id="expr"
+          id="experience"
           className="border-b-2 border-white md:border-b-0 md:border-r-2 flex flex-col gap-3"
         >
           <p className="text-xl border-white border-b-2  py-1 px-2">
@@ -167,12 +167,12 @@ export default function Home() {
           {data.workExp.map((item, idx) => {
             return (
               <div
-                className="flex justify-between items-center px-2 py-1 gap-2 md:gap-4 md:px-2"
+                className="flex  opacity-50 justify-between items-center px-2 py-1 gap-2 md:gap-4 md:px-2"
                 key={idx}
               >
                 <span className="md:ml-1 pr-[1px] md:pr-2">&gt; </span>
 
-                <div className=" text-2xl line-through decoration-1 w-full ">
+                <div className=" text-2xl cursor-custom hover:cursor-custom strike-text  line-through decoration-1 w-full ">
                   {item.title}
                 </div>
                 <div className="flex flex-col md:w-full">
@@ -191,7 +191,7 @@ export default function Home() {
             );
           })}
         </div>
-        <div className="flex flex-col gap-2 " id="ach">
+        <div className="flex flex-col gap-2 " id="acknowledgement">
           <p className="text-xl border-white border-b-2  py-1 px-2">
             Achievements
           </p>
@@ -219,7 +219,7 @@ export default function Home() {
       <div className="border-b-2 border-white h-6 diagonal-stripes"></div>
       <div className="border-b-2 border-white  grid grid-rows-3   md:grid-rows-1 md:grid-cols-3">
         <div className="border-b-2 border-white  md:border-b-0 md:border-r-2">
-          <div className="flex flex-col gap-2 px-2 pb-1" id="proj">
+          <div className="flex flex-col gap-2 px-2 pb-1" id="projects">
             <div className="text-xl md:text-2xl flex mt-2 justify-between items-center">
               &gt; {data.Projects[0].title}
               <span className="text-xs md:text-sm italic flex gap-2">

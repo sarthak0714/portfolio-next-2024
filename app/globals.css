@@ -67,3 +67,9 @@
 .tag-list li {
   @apply p-2  rounded-lg shadow-lg;
 }
+
+@layer utilities {
+  .cursor-custom {
+    cursor: url("../public/dpa.svg"), auto;
+  }
+}
