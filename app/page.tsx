@@ -279,7 +279,7 @@ export default function Home() {
                 />
               </span>
             </Link>
-            <div className="hidden p-2 text-sm md:block text-justify">
+            <div className="hidden p-2 text-md md:block text-justify">
               {data.Projects[0].descriptionL}
             </div>
             <div className="block px-1  text-sm md:hidden text-justify">
@@ -316,7 +316,7 @@ export default function Home() {
                 />
               </span>
             </Link>
-            <div className="hidden p-2 text-sm md:block text-justify">
+            <div className="hidden p-2 text-md md:block text-justify">
               {data.Projects[1].descriptionL}
             </div>
             <div className="block px-1  text-sm md:hidden text-justify">
@@ -350,7 +350,7 @@ export default function Home() {
                 />
               </span>
             </Link>
-            <div className="hidden p-2 text-sm md:block text-justify">
+            <div className="hidden p-2 text-md md:block text-justify">
               {data.Projects[2].descriptionL}
             </div>
             <div className="block px-1  text-sm md:hidden text-justify">

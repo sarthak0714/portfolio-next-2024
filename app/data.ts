@@ -1,7 +1,7 @@
 export const data = {
   about: {
     title: "Hello there ! ",
-    desc: "I am a Final year student @TSEC who loves Backend, hungry to learn and explore new technologies, languages and frameworks. Always eager to dive into the fascinating world of system design, particularly distributed systems. I'm also a Gymrat, always seeking to balance my love for technology with a healthy lifestyle.",
+    desc: "I am a Final year student @TSEC who loves Backend, hungry to learn and explore new Tech, languages and frameworks. Always eager to dive into the fascinating world of system design, particularly distributed systems. I'm also a Gymrat, always seeking to balance my love for tec with a healthy lifestyle.",
   },
   socialLinks: {
     github: "https://github.com/sarthak0714",
@@ -62,7 +62,7 @@ export const data = {
       descriptionS:
         "A SaaS platform enabling scalable and accessible certificate generation and verification services.",
       descriptionL:
-        "CERTISURE is a SaaS platform that enables scalable and accessible certificate generation and verification services for a diverse client base. It provides a streamlined system that allows users to create various types of certificates efficiently while offering accessible verification services to ensure authenticity and reliability.",
+        "CERTISURE is a SaaS platform that enables scalable and accessible certificate generation and verification services for a diverse client base. It provides a streamlined system that allows users to create various types of certificates efficiently while offering accessible verification services to ensure authenticity and reliability. Basically a Oneclick certificate hosting platform.",
 
       technologies: `["React", "Tailwind", "Flask"]`,
       link: "https://certisure.vercel.app/",
@@ -72,7 +72,7 @@ export const data = {
       descriptionS:
         "Developed a server using Go and the actor model for encapsulation, scalability, and real-time updates via WebSockets.",
       descriptionL:
-        "Developed a web-based Tic-Tac-Toe game server in Go using the actor model for better encapsulation and scalability, with channel communication between actors. Implemented real-time game updates via WebSockets for seamless state synchronization across clients. Designed game logic for game creation, move validation, and status updates, with a clear structure for actors, messages, handlers, and logic.",
+        "Developed a Game server in Go using the actor model for better encapsulation and scalability, with channel communication between actors. Implemented real-time game updates via WS for seamless state synchronization across clients. Designed game logic for game creation, move validation, and status updates, with a clear structure for actors, messages, handlers, and logic.",
       technologies: `["Go", "WebSockets", HTMX]`,
       link: "https://github.com/sarthak0714/ttt",
     },
