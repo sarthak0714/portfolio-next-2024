@@ -1,7 +1,7 @@
 export const data = {
   about: {
-    title: "ABout me content",
-    desc: "Um a a a Um aa a a",
+    title: "Hello there ! ",
+    desc: "I am a Final year student @TSEC who loves Backend, hungry to learn and explore new technologies, languages and frameworks. Always eager to dive into the fascinating world of system design, particularly distributed systems. I'm also a Gymrat, always seeking to balance my love for technology with a healthy lifestyle.",
   },
   socialLinks: {
     github: "https://github.com/sarthak0714",

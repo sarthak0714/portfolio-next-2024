@@ -23,7 +23,6 @@ export default function Home() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [hydrated, setHydrated] = React.useState(false);
-  const router = useRouter();
   useEffect(() => {
     setHydrated(true);
 
@@ -49,10 +48,12 @@ export default function Home() {
             <p className="text-white text-center text-lg md:text-3xl">0714</p>
           </div>
           <div className="h-full col-span-10 flex justify-start items-center pl-2">
-            <p className="text-white text-xl md:text-3xl">Sarthak Tanpure.</p>
+            <p className="text-white text-xl md:text-3xl">
+              Sarthak Tanpure. <span className="hidden">💗 Shefali</span>
+            </p>
           </div>
         </div>
-        <div className="h-10 border-b-2  border-white grid md:grid-cols-1 grid-cols-3 md:h-14">
+        <div className=" border-b-2  border-white grid md:grid-cols-1 grid-cols-3 md:h-14">
           {/* <div className="border-r-2 border-white"></div> */}
           <div className="hidden md:flex md:justify-center items-center border-r-2 md:border-l-2 border-white">
             <p className="text-white text-2xl text-center ">{time}</p>
@@ -78,9 +79,13 @@ export default function Home() {
         </div>
       </div>
       <div className="border-b-2 border-white grid grid-rows-2  md:grid-cols-2 md:grid-rows-1 ">
-        <div className="border-b-2 md:border-b-0 border-white md:border-r-2">
-          <p className="text-white">{data.about.title}</p>
-          <p className="text-white">{data.about.desc}</p>
+        <div className="border-b-2 md:border-b-0 border-white md:border-r-2 flex flex-col  p-4">
+          <p className="text-white text-xl md:text-2xl text-left">
+            {data.about.title}
+          </p>
+          <p className="text-white text-sm md:text-lg text-justify">
+            {data.about.desc}
+          </p>
         </div>
         <div className=" grid grid-cols-2  md:border-white">
           <div className="border-r-2 border-white h-full relative">
@@ -98,28 +103,44 @@ export default function Home() {
               <Scroller />
             </div>
             <div className="border-b-2  border-white flex justify-evenly items-center">
-              <Link href={data.socialLinks.email}>
+              <Link
+                href={data.socialLinks.email}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <AiFillMail
                   color="white"
                   size={40}
                   className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
-              <Link href={data.socialLinks.github}>
+              <Link
+                href={data.socialLinks.github}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <FaGithubSquare
                   color="white"
                   size={35}
                   className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
-              <Link href={data.socialLinks.linkedin}>
+              <Link
+                href={data.socialLinks.linkedin}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <AiFillLinkedin
                   color="white"
                   size={40}
                   className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
-              <Link href={data.socialLinks.x}>
+              <Link
+                href={data.socialLinks.x}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <AiFillTwitterSquare
                   color="white"
                   size={40}
@@ -136,14 +157,23 @@ export default function Home() {
                 className="rotate-[270deg]"
                 src="https://lottie.host/embed/c74a9e0b-6910-44d6-837e-c4cb74b7ef08/vAeNFy4G2a.json"
               ></iframe>
-              <Link href={data.resumeLink} className="text-sm md:text-base">
+              <Link
+                href={data.resumeLink}
+                className="text-sm md:text-base"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <FaFileDownload
                   color="white"
                   size={35}
                   className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
                 />
               </Link>
-              <Link href={data.resumeLink}>
+              <Link
+                href={data.resumeLink}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <AiOutlineEye
                   color="white"
                   size={35}
@@ -223,6 +253,8 @@ export default function Home() {
           <div className="flex flex-col gap-2 px-2 pb-1" id="projects">
             <Link
               href={data.Projects[0].link}
+              rel="noopener noreferrer"
+              target="_blank"
               className="text-xl md:text-3xl flex mt-2 cursor-pointer  justify-between items-center"
             >
               <div className="hover:-translate-y-1 transition-transform duration-300 ease-in-out">
@@ -259,6 +291,8 @@ export default function Home() {
           <div className="flex flex-col gap-2 px-2 pb-1">
             <Link
               href={data.Projects[1].link}
+              rel="noopener noreferrer"
+              target="_blank"
               className="text-xl md:text-3xl flex mt-2 justify-between items-center cursor-pointer"
             >
               <div className="hover:-translate-y-1 transition-transform duration-300 ease-in-out">
@@ -294,6 +328,8 @@ export default function Home() {
           <div className="flex flex-col gap-2 px-2 pb-1">
             <Link
               href={data.Projects[2].link}
+              rel="noopener noreferrer"
+              target="_blank"
               className="text-xl md:text-3xl flex mt-2 justify-between items-center cursor-pointer "
             >
               <div className="hover:-translate-y-1 transition-transform duration-300 ease-in-out">
@@ -324,9 +360,11 @@ export default function Home() {
         </div>
       </div>
       <div className="border-b-2 border-white h-8 grid grid-cols-10 ">
-        <div className="col-span-3  border-white md:col-span-4 diagonal-stripes"></div>
+        <div className="col-span-3 border-r-2 border-white md:col-span-4 diagonal-stripes"></div>
         <Link
           href="https://github.com/sarthak0714?tab=repositories"
+          rel="noopener noreferrer"
+          target="_blank"
           className="flex justify-center items-center col-span-4   md:col-span-2 hover:scale-125 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
         >
           <div className="mr-2 text-xl">More</div>
