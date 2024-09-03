@@ -10,6 +10,9 @@ const vsrosd = localfont({
 export const metadata: Metadata = {
   title: "Sarthak Tanpure",
   description: "Portfolio Website",
+  icons: {
+    icon: ["../app/favicon.ico"],
+  },
 };
 
 export default function RootLayout({
