@@ -13,9 +13,21 @@
 }
 
 .scroller {
-  @apply max-w-[150px] md:max-w-[250px];
-}
+  width: 100%;
+  max-width: 150px;
 
+  @media (min-width: 768px) {
+    max-width: 200px;
+
+    @media (min-width: 1024px) {
+      max-width: 250px;
+    }
+
+    @media (min-width: 1440px) {
+      max-width: 300px;
+    }
+  }
+}
 .scroller__inner {
   @apply py-4 flex flex-wrap gap-1;
 }

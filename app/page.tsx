@@ -47,8 +47,8 @@ export default function Home() {
           <div className=" border-r-2 border-white h-full col-span-2 md:col-span-1 flex justify-center items-center">
             <p className="text-white text-center text-lg md:text-3xl">0714</p>
           </div>
-          <div className="h-full col-span-10 flex justify-start items-center pl-2">
-            <p className="text-white text-xl md:text-3xl">
+          <div className="h-full col-span-10 flex justify-center md:justify-start items-center pl-2">
+            <p className="text-white text-xl md:pl-2 md:text-3xl">
               Sarthak Tanpure. <span className="hidden">💗 Shefali</span>
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function Home() {
         <div className=" border-b-2  border-white grid md:grid-cols-1 grid-cols-3 md:h-14">
           {/* <div className="border-r-2 border-white"></div> */}
           <div className="hidden md:flex md:justify-center items-center border-r-2 md:border-l-2 border-white">
-            <p className="text-white text-2xl text-center ">{time}</p>
+            <p className="text-white text-2xl text-center">{time}</p>
           </div>
           <Link
             href="#experience"
