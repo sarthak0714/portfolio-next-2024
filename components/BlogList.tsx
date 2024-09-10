@@ -14,7 +14,7 @@ export default function BlogList({ blogs }: BlogListProps) {
             <div className="py-2 px-4   ">
               <h2 className="hover:underline text-justify text-lg md:text-2xl ">
                 &gt; {blog.title}{" "}
-                <span className="text-white text-center opacity-50 underline text-sm md:text-lg">
+                <span className="text-white opacity-50 underline text-sm md:text-lg">
                   [{blog.date}]
                 </span>
               </h2>
