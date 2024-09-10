@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "blog1",
+    "title": "My First Blog Post",
+    "date": "2023-04-01",
+    "excerpt": "This is an excerpt from my first blog post.",
+    "contentFile": "blog1.md"
+  },
+  {
+    "slug": "blog2",
+    "title": "My Second Blog Post",
+    "date": "2023-04-15",
+    "excerpt": "This is an excerpt from my second blog post.",
+    "contentFile": "blog2.md"
+  }
+]

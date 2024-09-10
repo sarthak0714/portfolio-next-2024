@@ -79,3 +79,39 @@
 .tag-list li {
   @apply p-2  rounded-lg shadow-lg;
 }
+
+.prose {
+  margin: 0;
+  padding: 16px;
+  color: white; /* Set text color to white */
+}
+.prose p {
+  text-align: justify;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose p,
+.prose strong {
+  color: white; /* Ensure all text elements are white */
+}
+.prose img {
+  width: 120px;
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+@media (min-width: 768px) {
+  .prose img {
+    width: 250px;
+  }
+}
+
+.prose-xl {
+  padding: 2rem;
+}

@@ -13,7 +13,7 @@ import { SiHtmx, SiSocketdotio, SiFlask } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaFileDownload, FaGithubSquare, FaReact } from "react-icons/fa";
 import { FaArrowUp, FaGolang } from "react-icons/fa6";
-import Scroller from "./Scroller";
+import Scroller from "../components/Scroller";
 import Image from "next/image";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 
