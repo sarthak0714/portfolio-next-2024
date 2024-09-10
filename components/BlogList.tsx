@@ -11,13 +11,13 @@ export default function BlogList({ blogs }: BlogListProps) {
       {blogs.map((blog, idx) => (
         <li key={blog.slug} className={` `}>
           <Link href={`/blogs/${blog.slug}`} className="  block ">
-            <div className="py-2 px-4  md:gap-2 ">
+            <div className="py-2 px-4   ">
               <h2 className="hover:underline text-lg md:text-2xl ">
                 &gt; {blog.title}{" "}
-                <span className="text-white opacity-50 text-sm md:text-lg">
-                  [{blog.date}]
-                </span>
               </h2>
+              <div className="text-white text-center opacity-50 underline text-sm md:text-lg">
+                [{blog.date}]
+              </div>
             </div>
 
             <p className=" px-4 md:px-8 pb-2 text-justify text-sm md:text-lg italic opacity-60">

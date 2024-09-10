@@ -12,37 +12,16 @@ import { VscLinkExternal } from "react-icons/vsc";
 import { SiHtmx, SiSocketdotio, SiFlask } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaFileDownload, FaGithubSquare, FaReact } from "react-icons/fa";
-import { FaArrowUp, FaGolang } from "react-icons/fa6";
+import { FaGolang } from "react-icons/fa6";
 import Scroller from "../components/Scroller";
+import ScrollTop from "@/components/ScrollTop";
 import Image from "next/image";
-import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 
 export default function Home() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [hydrated, setHydrated] = React.useState(false);
-  const [showButton, setShowButton] = useState(false);
-  const isBrowser = () => typeof window !== "undefined";
-  function handleScroll() {
-    if (typeof window !== "undefined" && window.scrollY > 100) {
-      setShowButton(true);
-    } else {
-      setShowButton(false);
-    }
-  }
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  function scrollToTop() {
-    if (!isBrowser()) return;
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setShowButton(false);
-  }
   const handleDownloadClick = () => {
     const url = `${data.resumeLink}?raw=true`;
     const link = document.createElement("a");
@@ -67,14 +46,7 @@ export default function Home() {
 
   return (
     <main className="border-2 border-white m-2 ">
-      <div
-        className={`fixed bottom-0 right-0 m-5 p-1.5 z-10 bg-black border-2 border-white md:hidden ${
-          showButton ? "block" : "hidden"
-        }`}
-        onClick={scrollToTop}
-      >
-        <MdKeyboardDoubleArrowUp size={20} />
-      </div>
+      <ScrollTop />
       <div className="grid grid-rows-2 md:grid-cols-6 md:grid-rows-1">
         <div className="border-b-2 border-white h-14 grid grid-cols-12 gap-0 md:col-span-5">
           <div className=" border-r-2 border-white h-full col-span-2 md:col-span-1 flex justify-center items-center">

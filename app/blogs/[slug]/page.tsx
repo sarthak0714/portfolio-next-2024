@@ -23,7 +23,7 @@ export default async function BlogPost({
       <div className="grid grid-rows-1 md:grid-cols-6 md:grid-rows-1">
         <div className="border-b-2 border-white h-14 grid grid-cols-12 gap-0 md:col-span-5">
           <Link
-            href="/"
+            href="/blogs"
             className=" border-r-2 border-white h-full col-span-2 md:col-span-1 flex justify-center items-center"
           >
             <p className="text-white text-center text-lg md:text-3xl">0714</p>
