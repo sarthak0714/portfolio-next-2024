@@ -1,16 +1,16 @@
 [
   {
-    "slug": "blog1",
-    "title": "My First Blog Post",
-    "date": "2023-04-01",
-    "excerpt": "This is an excerpt from my first blog post.",
-    "contentFile": "blog1.md"
+    "slug": "Potfolio",
+    "title": "Into the Making of this Portfolio",
+    "date": "11-09-2024",
+    "excerpt": "I decided to challenge myself by designing and building a portfolio website in just four days. I hate JavaScript BTW. It was a whirlwind of caffeine, late nights, getting carried by the bois and a surprising amount of creativity. This basically documents the steps and some hilarious / slightly terrifying tales, and offer some motivation for you so you can finally get your lazy ass up and build your own.",
+    "contentFile": "Portfolio.md"
   },
   {
-    "slug": "blog2",
-    "title": "My Second Blog Post",
-    "date": "2023-04-15",
-    "excerpt": "This is an excerpt from my second blog post.",
-    "contentFile": "blog2.md"
+    "slug": "Actormodel",
+    "title": "How I fell in love with The Actor Model",
+    "date": "XX-XX-XXXX",
+    "excerpt": "Writing stuff takes time, we dont use AI out here...",
+    "contentFile": "Actormodel.md"
   }
 ]

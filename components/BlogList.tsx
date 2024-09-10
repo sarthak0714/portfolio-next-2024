@@ -10,17 +10,19 @@ export default function BlogList({ blogs }: BlogListProps) {
     <ul className="">
       {blogs.map((blog, idx) => (
         <li key={blog.slug} className={` `}>
-          <Link href={`/blog/${blog.slug}`} className="  block hover:underline">
-            <div className="py-2 px-4 flex justify-between md:justify-normal md:gap-2 items-center">
-              <h2 className="text-lg md:text-2xl font-bold">
-                &gt; {blog.title}
+          <Link href={`/blogs/${blog.slug}`} className="  block ">
+            <div className="py-2 px-4  md:gap-2 ">
+              <h2 className="hover:underline text-lg md:text-2xl ">
+                &gt; {blog.title}{" "}
+                <span className="text-white opacity-50 text-sm md:text-lg">
+                  [{blog.date}]
+                </span>
               </h2>
-              <p className="text-white opacity-50 text-sm md:text-lg">
-                [{blog.date}]
-              </p>
             </div>
 
-            <p className="px-2 pb-2">{blog.excerpt}</p>
+            <p className=" px-4 md:px-8 pb-2 text-justify text-sm md:text-lg italic opacity-60">
+              {blog.excerpt}
+            </p>
             <div className="border-y-2  border-white h-6 diagonal-stripes "></div>
           </Link>
         </li>
