@@ -2,15 +2,15 @@
   {
     "slug": "Potfolio",
     "title": "Into the Making of this Portfolio",
-    "date": "11-09-2024",
+    "date": "XX-09-2024",
     "excerpt": "I decided to challenge myself by designing and building a portfolio website in just four days. I hate JavaScript BTW. It was a whirlwind of caffeine, late nights, getting carried by the bois and a surprising amount of creativity. This basically documents the steps and some hilarious / slightly terrifying tales, and offer some motivation for you so you can finally get your lazy ass up and build your own.",
     "contentFile": "Portfolio.md"
   },
   {
     "slug": "Actormodel",
     "title": "How I fell in love with The Actor Model",
-    "date": "XX-XX-XXXX",
-    "excerpt": "Writing stuff takes time, we dont use AI out here...",
+    "date": "14-09-2024",
+    "excerpt": "As a gamer, I've always wondered how online multiplayer games manage to keep thousands of players connected without crashing. Turns out, it's like a giant game of telephone, but with computers and lots of rules. The Actor Model is the system that makes it all work. I really got hooked into understanding the working and while reading, learing about concurrent systems I fell in love with the actor model",
     "contentFile": "Actormodel.md"
   }
 ]
