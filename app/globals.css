@@ -100,7 +100,7 @@
   color: white; /* Ensure all text elements are white */
 }
 .prose img {
-  width: 120px;
+  width: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -108,6 +108,6 @@
 
 @media (min-width: 768px) {
   .prose img {
-    width: 250px;
+    width: 400px;
   }
 }

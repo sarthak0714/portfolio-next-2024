@@ -1,4 +1,4 @@
-# How I fell in love with The Actor Model
+# Why I love The Actor Model
 
 What is the Actor Model?
 
@@ -7,6 +7,8 @@ What is the Actor Model?
 In simpler terms it is an conceptual programming model that deals with concurrency.
 
 The actor model is a computational paradigm that is based on the idea that everything in a system is an actor. An actor is basically an entity that has a state and defined behavior. Actors communicate with each other by sending and receiving messages.
+
+![Actor Model](../actorjoke.jpg "hehe")
 
 The actor model is a very simple concept. It is also a very powerful concept. But it has some conceptual loopholes.
 
@@ -21,7 +23,7 @@ It embodies three main things:
 2. **Storage:** It has to store something.
 3. **Communication:** It has to communicate with something.
 
-![Actor Model](./actormodel.png "Actors Acting xD")
+![Actor Model](../actmdl.png "Actors Acting xD")
 
 Some Loopholes:
 
@@ -35,9 +37,9 @@ There cannot be one actor, they come in systems. They have addresses by which th
 2. Send messages to actors.
 3. Decide what to do with next message.
 
-An actor cannot change or directly affect another actor. It can never excahnge state with another actor.
+An actor cannot change or directly affect another actor. It can never exchange state with another actor.
 
-Actors communicate with each other by sending and receiving messages. These messages are sent asynchronously. This means that the sender of a message does not have to wait for the receiver to process the message before it can continue, this greatly reduces the wait-time lag.
+But actors communicate with each other by sending and receiving messages. These messages are sent asynchronously. This means that the sender of a message does not have to wait for the receiver to process the message before it can continue, this greatly reduces the wait-time lag.
 
 _Conceptually only 1 message at 1 time is processed._
 
@@ -57,5 +59,7 @@ The Actor Model follows the "Let It Crash" idea. Each actor works alone, so if o
 The Actor Model is a great way to build concurrent programs.
 
 > _It's like a group of people working on a project, each doing their own part. They talk to each other by sending messages, and if one person makes a mistake, it doesn't ruin the whole project._
+
+![Naruto Refernce](../narutoref.gif "Kage bunshin no jutsiu")
 
 Imagine if you and your hackathon team could work the same way! Instead of dealing with merge conflicts and endless arguments, ya'll could have been actors all along.

@@ -56,7 +56,7 @@ export default async function BlogPost({
         </div>
         <div className="w-[100%] md:flex md:flex-col md:justify-start  md:items-center ">
           <div
-            className="prose prose-sm md:prose-lg md:max-w-[120rem] md:mx-auto"
+            className="prose prose-sm md:prose-lg md:max-w-[80rem] md:mx-auto"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>

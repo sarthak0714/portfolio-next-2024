@@ -7,10 +7,10 @@
     "contentFile": "Portfolio.md"
   },
   {
-    "slug": "Actormodel",
-    "title": "How I fell in love with The Actor Model",
+    "slug": "actormodel",
+    "title": "Why I love The Actor Model",
     "date": "14-09-2024",
     "excerpt": "As a gamer, I've always wondered how online multiplayer games manage to keep thousands of players connected without crashing. Turns out, it's like a giant game of telephone, but with computers and lots of rules. The Actor Model is the system that makes it all work. I really got hooked into understanding the working and while reading, learing about concurrent systems I fell in love with the actor model",
-    "contentFile": "Actormodel.md"
+    "contentFile": "actormodel.md"
   }
 ]
