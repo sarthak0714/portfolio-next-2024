@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { data } from "./data";
+import map from "../public/map.png";
 import Link from "next/link";
 import {
   AiFillMail,
@@ -93,14 +94,14 @@ export default function Home() {
           </p>
         </div>
         <div className=" grid grid-cols-2  md:border-white">
-          <div className="border-r-2 border-white h-full relative">
+          <div className="inline-block border border-white overflow-hidden relative">
             <Image
-              src="../public/map.png"
+              src={map}
               alt="Map"
               layout="fill"
               objectFit="cover"
-              className="absolute"
-            ></Image>
+              className="absolute transition-transform duration-400 ease-in-out transform scale-150 md:scale-100"
+            />
           </div>
           <div className="grid grid-rows-3">
             <div className="border-b-2 border-white  flex justify-center items-center">
@@ -115,7 +116,7 @@ export default function Home() {
                 <AiFillMail
                   color="white"
                   size={40}
-                  className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-75 md:scale-100"
+                  className="hover:-translate-y-2 transition-transform duration-300 ease-in-out scale-125 md:scale-100"
                 />
               </Link>
               <Link
