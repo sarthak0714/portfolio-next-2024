@@ -94,14 +94,13 @@ export default function Home() {
         </div>
         <div className=" grid grid-cols-2  md:border-white">
           <div className="border-r-2 border-white h-full relative">
-            <iframe
-              title="map"
-              src="https://my.atlist.com/map/8a8c7146-1bab-4dc7-ad01-391a4574fcd1/?share=true"
-              allow="geolocation 'self' https://my.atlist.com"
-              width="100%"
-              height="100%"
-              scrolling="no"
-            ></iframe>
+            <Image
+              src="../public/map.png"
+              alt="Map"
+              layout="fill"
+              objectFit="cover"
+              className="absolute"
+            ></Image>
           </div>
           <div className="grid grid-rows-3">
             <div className="border-b-2 border-white  flex justify-center items-center">
