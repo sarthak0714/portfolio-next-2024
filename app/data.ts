@@ -14,7 +14,7 @@ export const data = {
 
   workExp: [
     {
-      title: "Backend Engineer Intern",
+      title: "Backend Engineer - Intern",
       company: "smallcase | TickertapeIN",
       companyMob: "Smallcase",
       tenure: "Ongoing...",
