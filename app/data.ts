@@ -14,6 +14,12 @@ export const data = {
 
   workExp: [
     {
+      title: "Backend Engineer Intern",
+      company: "smallcase | TickertapeIN",
+      companyMob: "Smallcase",
+      tenure: "Ongoing...",
+    },
+    {
       title: "SDE Intern",
       company: "Reliance Industries Ltd.",
       companyMob: "Reliance Industries",

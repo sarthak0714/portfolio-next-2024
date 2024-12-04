@@ -196,17 +196,25 @@ export default function Home() {
           <p className="text-xl border-white border-b-2  py-1 px-2">
             Work Experince
           </p>
-          <p className="text-2xl px-4 py-1">- Open to Work -</p>
+          {/* <p className="text-2xl px-4 py-1">- Open to Work -</p> */}
 
           {data.workExp.map((item, idx) => {
             return (
               <div
-                className="flex  opacity-50 justify-between items-center px-2 py-1 gap-2 md:gap-4 md:px-2"
+                className={`flex  ${
+                  item.tenure !== "Ongoing..." ? "opacity-50" : ""
+                } justify-between items-center px-2 py-1 gap-2 md:gap-4 md:px-2`}
                 key={idx}
               >
                 <span className="md:ml-1 pr-[1px] md:pr-2">&gt; </span>
 
-                <div className=" text-2xl   strike-text  line-through decoration-1 w-full ">
+                <div
+                  className={`text-2xl w-full ${
+                    item.tenure !== "Ongoing..."
+                      ? "line-through decoration-1"
+                      : ""
+                  }`}
+                >
                   {item.title}
                 </div>
                 <div className="flex flex-col md:w-full">
