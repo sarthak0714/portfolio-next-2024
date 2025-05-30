@@ -1,7 +1,7 @@
 export const data = {
   about: {
     title: "Hello there ! ",
-    desc: "I am a Final year student @TSEC who loves Backend, hungry to learn and explore new Tech, languages and frameworks. Always eager to dive into the fascinating world of system design, particularly distributed systems. I'm also a Gymrat, always seeking to balance my love for tec with a healthy lifestyle.",
+    desc: "I am a curious SDE who loves Backend, hungry to learn and explore new Tech & Finance Markets, languages and frameworks. Always eager to dive into the fascinating world of system design, particularly distributed systems. I'm also a Gymrat, always seeking to balance my love for tec with a healthy lifestyle.",
   },
   socialLinks: {
     github: "https://github.com/sarthak0714",
@@ -14,10 +14,16 @@ export const data = {
 
   workExp: [
     {
-      title: "Backend Engineer - Intern",
+      title: "SDE 1",
       company: "smallcase | TickertapeIN",
       companyMob: "Smallcase",
       tenure: "Ongoing...",
+    },
+    {
+      title: "Backend Engineer - Intern",
+      company: "smallcase | TickertapeIN",
+      companyMob: "Smallcase",
+      tenure: "Nov 24 - May 25",
     },
     {
       title: "SDE Intern",
