@@ -95,6 +95,31 @@
 .prose a:hover {
   opacity: 0.65;
 }
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+.prose th,
+.prose td {
+  border: 1px solid white;
+  padding: 0.5rem;
+  text-align: left;
+}
+.prose th {
+  background-color: white;
+  color: black;
+}
+.recipe-image {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+.recipe-image img {
+  width: min(100%, 520px);
+  max-height: 420px;
+  object-fit: cover;
+}
 
 .prose h1,
 .prose h2,

@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import remarkGfm from "remark-gfm";
 import { Recipe } from "../types/recipe";
 
 const recipesDirectory = path.join(process.cwd(), "public/recipies");
@@ -30,7 +31,7 @@ export async function getRecipeBySlug(
     "utf-8"
   );
   const { content } = matter(fileContents);
-  const processedContent = await remark().use(html).process(content);
+  const processedContent = await remark().use(remarkGfm).use(html).process(content);
 
   return { content: processedContent.toString(), metadata: recipe };
 }
