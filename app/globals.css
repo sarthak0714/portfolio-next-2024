@@ -88,6 +88,13 @@
 .prose p {
   text-align: justify;
 }
+.prose a {
+  color: white;
+  text-decoration: underline;
+}
+.prose a:hover {
+  opacity: 0.65;
+}
 
 .prose h1,
 .prose h2,
